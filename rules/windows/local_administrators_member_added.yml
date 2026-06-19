@@ -1,0 +1,21 @@
+title: Member Added to Local Administrators Group
+id: d109a96b-1efb-49bf-8df4-7a89bbf3f121
+status: experimental
+description: Detects a member being added to the local Administrators group in synthetic Security event data.
+author: Dewald Pretorius
+date: 2026-06-19
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4732
+    TargetUserName|contains: 'Administrators'
+  condition: selection
+falsepositives:
+  - Approved workstation provisioning or support access changes
+level: high
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1098
