@@ -1,0 +1,3 @@
+HypothesisId,Title,DataSource,ExpectedEventIds,ATTACKTechnique,BenignExamples,TuningNotes,Status
+HYP-001,Example authentication anomaly,Windows Security Log,"4624;4625",T1110,"User typing error; expired password",Group by account and source before escalation,Draft
+HYP-002,Example service installation review,Windows System Log,7045,T1543.003,"Approved software deployment",Compare service path and signer with approved software,Draft
