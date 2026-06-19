@@ -1,0 +1,2 @@
+{"Classification":"SIMULATED PORTFOLIO DATA","EventID":4688,"NewProcessName":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell.exe -NoProfile -EncodedCommand SQBFAFgA","ExpectedRules":["1e65b22e-c4e9-4af7-a38c-f28739180d65"]}
+{"Classification":"SIMULATED PORTFOLIO DATA","EventID":7045,"ServiceName":"SyntheticUpdater","ServiceFileName":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -File C:\\Lab\\service.ps1","ExpectedRules":["b9a5a763-eed6-4cad-9c48-0df238810a85"]}
