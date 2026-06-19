@@ -1,0 +1,25 @@
+title: Suspicious Scheduled Task Creation
+id: 6f73721b-f4a9-479a-a7e8-90a7dd4c5ccd
+status: experimental
+description: Detects scheduled task creation events containing common script interpreters in synthetic Security event data.
+author: Dewald Pretorius
+date: 2026-06-19
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4698
+    TaskContent|contains_any:
+      - 'powershell.exe'
+      - 'cmd.exe'
+      - 'wscript.exe'
+      - 'cscript.exe'
+  condition: selection
+falsepositives:
+  - Approved software deployment, maintenance, or monitoring tasks
+level: high
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1053.005

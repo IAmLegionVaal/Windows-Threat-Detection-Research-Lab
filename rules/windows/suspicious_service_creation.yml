@@ -1,0 +1,25 @@
+title: Suspicious Windows Service Creation
+id: b9a5a763-eed6-4cad-9c48-0df238810a85
+status: experimental
+description: Detects service installation events whose image path references common script interpreters in synthetic System event data.
+author: Dewald Pretorius
+date: 2026-06-19
+logsource:
+  product: windows
+  service: system
+detection:
+  selection:
+    EventID: 7045
+    ServiceFileName|contains_any:
+      - 'powershell'
+      - 'cmd.exe /c'
+      - 'wscript.exe'
+      - 'cscript.exe'
+  condition: selection
+falsepositives:
+  - Approved software deployment or management agents
+level: high
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1543.003

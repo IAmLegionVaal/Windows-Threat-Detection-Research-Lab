@@ -1,0 +1,19 @@
+title: Windows Security Audit Log Cleared
+id: 54f2ca1f-689d-4e37-9d86-cc588cf9a82b
+status: experimental
+description: Detects Windows Security event 1102 indicating that the audit log was cleared.
+author: Dewald Pretorius
+date: 2026-06-19
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+  - Authorized maintenance or lab reset activity with documented approval
+level: high
+tags:
+  - attack.defense_evasion
+  - attack.t1070.001
